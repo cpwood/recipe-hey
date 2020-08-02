@@ -1,0 +1,14 @@
+{
+  "id": "hey",
+  "name": "Hey",
+  "version": "1.0.0",
+  "description": "Hey",
+  "main": "index.js",
+  "author": "Chris Wood <chris.wood@hey.com>",
+  "license": "MIT",
+  "repository": "https://github.com/cpwood/recipe-hey",
+  "config": {
+    "serviceURL": "https://app.hey.com",
+    "hasIndirectMessages": true
+  }
+}
