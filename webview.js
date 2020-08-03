@@ -1,17 +1,18 @@
 module.exports = (Franz) => {
   const getMessages = function getMessages() {
-      let firstTime = 0;
+    if (document.location.href == "https://app.hey.com/") {
+      let screener = 0;
       let unread = 0;
 
       if (document.getElementsByClassName('btn--icon-screener').length > 0) {
         let text = document.getElementsByClassName('btn--icon-screener')[0].innerText;
 
-        firstTime = parseInt(/[0-9]+/.exec(text)[0]);
+        screener = parseInt(/[0-9]+/.exec(text)[0]);
 
         // Just incase we don't end up with a number, set it back to zero (parseInt can return NaN)
-        firstTime = parseInt(firstTime, 10);
-        if (isNaN(firstTime)) {
-          firstTime = 0;
+        screener = parseInt(screener, 10);
+        if (isNaN(screener)) {
+          screener = 0;
         }
       }
 
@@ -26,7 +27,8 @@ module.exports = (Franz) => {
       }
 
       // set Franz badge
-      Franz.setBadge(unread, firstTime);
+      Franz.setBadge(unread, screener);
+    }
   };
 
   // check for new messages every second and update Franz badge
